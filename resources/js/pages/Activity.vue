@@ -1,0 +1,13 @@
+<template>
+    <h1>activity</h1>
+</template>
+
+<script>
+    export default {
+        name: "Activity"
+    }
+</script>
+
+<style scoped>
+
+</style>
