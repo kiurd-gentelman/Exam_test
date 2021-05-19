@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@mathieustan/vue-datepicker": "^0.2.11",
         "vue-router": "^3.5.1"
     }
 }

@@ -16,8 +16,8 @@ class CreateKhojTheSearchesTable extends Migration
         Schema::create('khoj_the_searches', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('input_value');
-            $table->string('search_value');
+            $table->text('input_value');
+            $table->text('search_value');
             $table->integer('result');
             $table->timestamps();
         });

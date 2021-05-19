@@ -37,6 +37,20 @@ class DoSomethingController extends Controller
         return response()->json($message,200);
     }
     public function getData(Request $request){
-        $result = KhojTheSearch::whereBetween($request->start_date, $request->end_date );
+
+//        dd($request->all());
+        $result = KhojTheSearch::select('input_value', 'created_at')
+        ->where('user_id',auth()->user()->id)
+        ->whereBetween('created_at',[$request->start_date, $request->end_date ])
+           ->get()->toArray();
+
+        $message= [
+            'message'=> 'success',
+            'user_id' => auth()->user()->id,
+            'payload' => $result
+        ] ;
+
+        return response()->json($message,200);;
+
     }
 }
