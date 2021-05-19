@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DoSomethingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/do-something', [DoSomethingController::class,'doSomething'])->name('do_something');
+    Route::post('/get-data', [DoSomethingController::class,'getData'])->name('get_data');
+
 });

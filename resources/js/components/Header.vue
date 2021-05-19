@@ -14,6 +14,7 @@
 
                     <li><router-link  class="nav-link " :to="{name:'dashboard'}">Dashboard</router-link></li>
                     <li><router-link  class="nav-link " :to="{name:'assignment'}">Assignment</router-link></li>
+                    <li><router-link  class="nav-link " :to="{name:'activity'}">Activity</router-link></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -38,7 +39,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item">
+                            <a class="dropdown-item" href="javaScript:void(0)" @click.prevent="logout">
                                 Logout
                             </a>
                         </div>
@@ -52,7 +53,14 @@
 
 <script>
     export default {
-        name: "Header.vue"
+        name: "Header.vue",
+        methods:{
+            logout(){
+                axios.post('/logout').then(response =>{
+                    this.$router.push('/')
+                })
+            }
+        }
     }
 </script>
 

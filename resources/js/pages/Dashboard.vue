@@ -1,21 +1,21 @@
 <template>
-
     <div>
         <Header></Header>
-      <h1>Dashboard</h1>
+        <MyInfo></MyInfo>
+
+
 
     </div>
-
-
 </template>
 
 <script>
     import Header from '../components/Header';
+    import MyInfo from '../components/MyInfo';
 
     export default {
         name: "Dashboard.vue",
         components:{
-            Header,
+            Header,MyInfo
         },
     }
 </script>

@@ -30,6 +30,7 @@ const routes = new VueRouter({
             redirect:{path:'/assignment/home'},
             children:[
                 { path: 'home', component: Home , name:'home' },
+                { path: 'activity', component: Activity , name:'activity' },
             ]
         },
 
