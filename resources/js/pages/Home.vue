@@ -63,6 +63,10 @@
                     inputValue: this.inputValue,
                     searchValue:this.searchValue
                 }).then(response=>{
+                    this.$toast.success({
+                        title:'Success!',
+                        message:'Operation successful'
+                    })
                     this.result = response.data.result
                     console.log(response)
                 })

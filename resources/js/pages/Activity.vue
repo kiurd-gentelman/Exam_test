@@ -4,7 +4,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">My Info</div>
+                        <div class="card-header">All Data</div>
                         <div class="card-body">
                             <form method="POST" @submit.prevent="getData" >
                                 <div class="form-group row">
@@ -17,7 +17,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="end_date" class="col-md-4 col-form-label text-md-right">End Date</label>
+                                    <label class="col-md-4 col-form-label text-md-right">End Date</label>
 
                                     <div class="col-md-6">
                                         <VueDatePicker  class="form-control"
@@ -37,7 +37,7 @@
                             </form>
                         </div>
                         <div class="card-body">
-                            {{all_data}}
+                            <pre>{{all_data}}</pre>
                         </div>
                     </div>
                 </div>
