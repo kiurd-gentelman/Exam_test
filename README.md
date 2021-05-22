@@ -60,3 +60,29 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Setup Environment for Development:
+
+- Copy  ``` .env.example to .env. ```
+- Build ``` docker-compose build. ```
+- Run ``` docker-compose up -d ``` for development purpose.
+- Open favourite browser and type ``` http://localhost ```. If you wan to run on different port, you can change the ``` HTTP_PORT ``` from  ```.env ``` file.
+- Generate key ``` docker exec bakend-end php artisan key:generate ```
+- If you want to install a npm package then run ```docker exec front-end npm install <Package_Name>```.
+- If you want to install compose package then run ```docker exec back-end compose install <PACKAGE_NAME>```.
+
+
+## Setup Environment for Production:
+- Copy ```.env.example``` to ```.env```.
+- Change the necessary staff in ```.env``` file.
+- Run ```docker-compose -f docker-compose.production.yml``` up for production.
+- Open favourite browser and type ```http://localhost```. If you wan to run on different port, you can change the ```HTTP_PORT``` from ```.env``` file.
+- If you want to install a npm package then ```run docker exec front-end npm install <Package_Name>```.
+- If you want to install compose package then ```run docker exec back-end compose install <PACKAGE_NAME>```.
+
+
+## Without docker:
+- make database name: exem_imtiaz_coding_pare_nah.
+- run ```php artisan migrate```.
+- run ```php artisan serve```.
+- run ```npm run watch```.
